@@ -139,7 +139,7 @@ drawClustSpline <- function(xpos, ytop, ybtm, color, nest.level, pad.left=0,
   }
   
   ## #view control points for testing
-  ## points(c(xst,xpos,xpos), c(yst,ytop,ybtm), pch=18,cex=0.5)
+  #points(c(xst,xpos,xpos), c(yst,ytop,ybtm), pch=18,cex=0.5)
 }
 
 
@@ -234,7 +234,7 @@ fishPlot <- function(fish,shape="polygon", vlines=NULL, col.vline="#FFFFFF99", v
 
   #set up the plot
   plot(-100,-100,col="white",
-       ylim=c(0,100),
+       ylim=c(-5,100),
        xlim=c(min(fish@timepoints)-pad, max(fish@timepoints)),
        yaxt="n", xaxt="n",
        bty="n", xlab="", ylab="")
