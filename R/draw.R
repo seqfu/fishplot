@@ -251,6 +251,7 @@ fishPlot <- function(fish,shape="polygon", vlines=NULL, col.vline="#FFFFFF99", v
   }
   #(if neither is set, bg will just be white)
 
+
   ##draw the clusters one at a time, being sure that parents go before children
   parentsList = 0
   while(length(parentsList) > 0){
@@ -291,14 +292,35 @@ fishPlot <- function(fish,shape="polygon", vlines=NULL, col.vline="#FFFFFF99", v
       }
     }
   }
+
+
   #draw timepoint labels/lines
   if(!is.null(vlines)){
     abline(v=vlines,col=col.vline,xpd=F)
 
     if(!is.null(vlab)){
-      text(vlines,103,vlab,pos=3,cex=cex.vlab,col="grey20",xpd=NA)
+      text(vlines,
+           103,
+           vlab,
+           pos=3,
+           cex=cex.vlab,
+           col="grey20",
+           #font=2,
+           xpd=NA)
     }
   }
+
+  # Draw 100% lines
+  lines(x=c(vlines[1],vlines[length(vlines)]), 
+        y=c(0,0), 
+        type="l", 
+        col="grey20", 
+        lty=2)
+  lines(x=c(vlines[1],vlines[length(vlines)]), 
+        y=c(100,100), 
+        type="l", 
+        col="grey20", 
+        lty=2)
 
   if(!is.null(title)){
     #get the center
