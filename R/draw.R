@@ -305,7 +305,7 @@ fishPlot <- function(fish,shape="polygon", vlines=NULL, col.vline="#FFFFFF99", v
            pos=3,
            cex=cex.vlab,
            col="grey20",
-           font=2,
+           #font=2,
            xpd=NA)
     }
   }
