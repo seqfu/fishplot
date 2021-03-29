@@ -224,7 +224,7 @@ checkCol <- function(fish){
 #'
 fishPlot <- function(fish,shape="polygon", vlines=NULL, col.vline="#FFFFFF99", vlab=NULL,
                      border=0.5, col.border="#777777", pad.left=0.2, ramp.angle=0.5,
-                     title=NULL, title.btm=NULL, cex.title=NULL, cex.vlab=0.7,
+                     title=NULL, title2=NULL, title.btm=NULL, cex.title=NULL, cex.vlab=0.7,
                      bg.type="gradient", bg.col=c("bisque","darkgoldenrod1","darkorange3")){
 
   #make sure we have the right number of colors
@@ -326,9 +326,22 @@ fishPlot <- function(fish,shape="polygon", vlines=NULL, col.vline="#FFFFFF99", v
     #get the center
     xmax = tail(fish@timepoints,n=1)
     cent = (xmax/2)-(pad/2)
-    text(cent,112,title,pos=3,cex=cex.title,xpd=T)
+    print('cent:')
+    print(cent)
+    print('pad:')
+    print(pad)
+    cent = cent - 0.21
+    print('cent:')
+    print(cent)
+    #text(cent,112,title,pos=3,cex=cex.title,xpd=T)
+    if (!is.null(title2)) {
+      cent = cent + 0.02
+      y = 93
+    } else {
+      y = 103
+    }
+    text(cent, y, title, pos=3, cex=cex.title, font=2, col="grey20", xpd=T)
   }
-
 
   if(!is.null(title.btm)){
     text(min(fish@timepoints)-(pad*1.2),2,title.btm,pos=4,cex=cex.title)
