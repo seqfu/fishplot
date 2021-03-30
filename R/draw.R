@@ -224,7 +224,7 @@ checkCol <- function(fish){
 #'
 fishPlot <- function(fish,shape="polygon", vlines=NULL, col.vline="#FFFFFF99", vlab=NULL,
                      border=0.5, col.border="#777777", pad.left=0.2, ramp.angle=0.5,
-                     title=NULL, title2=NULL, title.btm=NULL, cex.title=NULL, cex.vlab=0.7,
+                     title=NULL, title2=NULL, title3=0, title.btm=NULL, cex.title=NULL, cex.vlab=0.7,
                      bg.type="gradient", bg.col=c("bisque","darkgoldenrod1","darkorange3")){
 
   #make sure we have the right number of colors
@@ -340,6 +340,7 @@ fishPlot <- function(fish,shape="polygon", vlines=NULL, col.vline="#FFFFFF99", v
     } else {
       y = 103
     }
+    cent = cent + title3
     text(cent, y, title, pos=3, cex=cex.title, font=2, col="grey20", xpd=T)
   }
 
