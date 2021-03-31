@@ -341,6 +341,7 @@ fishPlot <- function(fish,shape="polygon", vlines=NULL, col.vline="#FFFFFF99", v
       y = 103
     }
     cent = cent + title3
+    cent = min(fish@timepoints) - (pad*0.88) 
     text(cent, y, title, pos=3, cex=cex.title, font=2, col="grey20", xpd=T)
   }
 
