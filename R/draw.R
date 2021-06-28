@@ -225,8 +225,8 @@ checkCol <- function(fish){
 fishPlot <- function(fish,shape="polygon", vlines=NULL, col.vline="#FFFFFF99", vlab=NULL,
                      border=0.5, col.border="#777777", pad.left=0.2, ramp.angle=0.5,
                      title=NULL, title2=NULL, title3=0, title.btm=NULL, cex.title=NULL, cex.vlab=0.7,
-                     bg.type="gradient", bg.col=c("bisque","darkgoldenrod1","darkorange3")){
-
+                     bg.type="gradient", bg.col=c("bisque","darkgoldenrod1","darkorange3"))
+{
   #make sure we have the right number of colors
   checkCol(fish)
 
@@ -234,7 +234,7 @@ fishPlot <- function(fish,shape="polygon", vlines=NULL, col.vline="#FFFFFF99", v
 
   #set up the plot
   plot(-100,-100,col="white",
-       ylim=c(-5,100),
+       ylim=c(-35,100),
        xlim=c(min(fish@timepoints)-pad, max(fish@timepoints)),
        yaxt="n", xaxt="n",
        bty="n", xlab="", ylab="")
@@ -348,7 +348,6 @@ fishPlot <- function(fish,shape="polygon", vlines=NULL, col.vline="#FFFFFF99", v
   if(!is.null(title.btm)){
     text(min(fish@timepoints)-(pad*1.2),2,title.btm,pos=4,cex=cex.title)
   }
-
 }
 
 #' Draw a legend beneath the plot
